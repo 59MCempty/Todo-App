@@ -4,10 +4,12 @@ import function
 
 todos = function.get_todos()
 
+
 def add_todo():
-    todo = st.session_state["new_todo"]
+    todo = st.session_state["new_todo"] + "\n"
     todos.append(todo)
     function.write_todos(todos)
+
 
 st.title("My Todo-App")
 st.header("This is My Todo-App")
@@ -24,4 +26,3 @@ for index, todo in enumerate(todos):
         st.experimental_rerun()
 
 
-st.session_state
